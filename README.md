@@ -20,7 +20,7 @@
 2. С помощью команды `cd` перейти в директорию, где будет находиться проект
 3. Клонировать проект
 ```bash
-git clone https://github.com/KatyshaVtyrina/Ads-board-.git
+git clone https://github.com/KatyshaVtyrina/Ads-board.git
 ```
 
 ### Шаг 2: Настройка окружения
