@@ -51,6 +51,19 @@ docker-compose exec app python3 manage.py loaddata ad.json
 docker-compose exec app python3 manage.py loaddata comments.json
 ```
 
+## Запуск тестов
+
+### Для запуска тестов выполнить команду
+```bash
+docker-compose exec app coverage3 run --source='.' manage.py test
+
+```
+### Для просмотра результата покрытия тестами выполнить команду
+```bash
+docker-compose exec app coverage report
+
+ *coverage_result.png - в корне проекта
+```
 
 ## Работа с сервисом через Postman
 
@@ -65,7 +78,8 @@ body: {
 2. Подключить авторизацию по токену
 
 3. Эндпоинты:
-1) Создание объявления
+
+- Создание объявления
 ```bash
 POST: http://localhost:8000/api/ads/
 body: {
@@ -76,37 +90,38 @@ body: {
   
       *image, created_at - необязательны для заполнения 
 ```
-2) Просмотр детальной информации об объявлении
+
+- Просмотр детальной информации об объявлении
 ```bash
 GET: http://localhost:8000/api/ads/<id_объявления>/
 ```
-3) Просмотр всех объявлений
+- Просмотр всех объявлений
 ```bash
 GET: http://localhost:8000/api/ads/
 ```
-4) Редактирование объявления
+- Редактирование объявления
 ```bash
 PUT: http://localhost:8000/api/ads/<id_объявления>/
 PATCH: http://localhost:8000/api/ads/<id_объявления>/
 ```
-5) Удаление объявления
+- Удаление объявления
 ```bash
 DELETE: http://localhost:8000/api/ads/<id_объявления>/
 ```
-6) Просмотр отзывов определенного объявления
+- Просмотр отзывов определенного объявления
 ```bash
 GET: http://localhost:8000/api/ads/<id_объявления>/comments
 ```
-7) Просмотр конкретного отзыва определенного объявления
+- Просмотр конкретного отзыва определенного объявления
 ```bash
 GET: http://localhost:8000/api/ads/<id_объявления>/comments/<id_отзыва>/
 ```
-8) Изменение отзыва
+- Изменение отзыва
 ```bash
 PUT: http://localhost:8000/api/ads/<id_объявления>/comments/<id_отзыва>/
 PATCH: http://localhost:8000/api/ads/<id_объявления>/comments/<id_отзыва>/
 ```
-9) Удаление отзыва
+- Удаление отзыва
 ```bash
 DELETE: http://localhost:8000/api/ads/<id_объявления>/comments/<id_отзыва>/
 ```
